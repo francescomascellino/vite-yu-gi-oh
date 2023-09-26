@@ -1,0 +1,6 @@
+@use './variables.scss' as *;
+
+.ygo-dropdown {
+    background-color: $ygo-orange;
+    color: $ygo-primary;
+}

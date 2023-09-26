@@ -4,31 +4,12 @@
         <AppNavbar />
 
     </header>
+
     <main class="my-4">
-
-
 
         <div class="container">
 
-            <!-- DROPDOWN BUTTON ROW -->
-            <div class="row mb-4">
-
-                <div class="col">
-
-                    <!-- DROPDOWN BUTTON -->
-                    <div class="dropdown">
-                        <button class="btn dropdown-toggle shadow ygo-dropdown" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            STARTING TYPE FROM API
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">TYPES LIST</a></li>
-                        </ul>
-                    </div>
-
-                </div>
-
-            </div>
+            <AppDropdown />
 
             <!-- CARDS CONTAINER -->
             <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4" v-if="store.cards">
@@ -168,13 +149,15 @@
 
 // IMPORTA STATE GLOBALE DA store.js PER NON DOVER PASSARE LE PROP DA COMPONENTE A COMPONENTE E CREARE UN PROP DRILLING
 import { store } from './store';
-import AppNavbar from './components/AppNavbar.vue'
+import AppNavbar from './components/AppNavbar.vue';
+import AppDropdown from './components/AppDropdown.vue'
 
 export default {
     name: "App",
 
     components: {
-        AppNavbar
+        AppNavbar,
+        AppDropdown
     },
 
     data() {
@@ -197,25 +180,6 @@ export default {
 
 <style lang="scss" scoped>
 @use './assets/scss/partials/variables.scss' as *;
-
-nav {
-    background-color: $ygo-orange;
-
-    .ygo-logo {
-        padding: 2rem;
-
-        img {
-            height: 4rem;
-        }
-
-    }
-
-}
-
-.ygo-dropdown {
-    background-color: $ygo-orange;
-    color: $ygo-primary;
-}
 
 .ygo-card {
 
