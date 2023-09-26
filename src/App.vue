@@ -1,12 +1,18 @@
 <template>
     <header>
-        <h1 class="text-center"> Yu-Gi_OH! Vite </h1>
+        <nav class="shadow">
+            <div class="text-center ygo-logo">
+                <img src="./assets/img/ygo-logo.png" alt="logo">
+            </div>
+        </nav>
     </header>
     <main class="my-4">
         <div class="container">
 
+            <!-- CARDS CONTAINER -->
             <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4" v-if="store.cards">
 
+                <!-- CARD -->
                 <div class="col" v-for="card in store.cards">
 
                     <div class="card shadow ygo-card">
@@ -25,8 +31,11 @@
                 </div>
 
             </div>
+
+            <!-- LOADER -->
             <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4 justify-content-center" v-else>
 
+                <!-- FAKE CARDS -->
                 <div class="col">
 
                     <div class="card shadow ygo-card ygo-cardLoader">
@@ -163,7 +172,24 @@ export default {
 @use './assets/scss/App.scss';
 @use './assets/scss/partials/variables.scss' as *;
 
+nav {
+    background-color: $ygo-orange;
+
+    .ygo-logo {
+        padding: 2rem;
+
+        img {
+            height: 4rem;
+        }
+
+    }
+
+}
+
+
+
 .ygo-card {
+
     background-color: $ygo-orange;
 
     .card-body {
@@ -193,6 +219,7 @@ export default {
     .ygo-imgLoader {
         height: 180px;
     }
+
 }
 
 .shine {
