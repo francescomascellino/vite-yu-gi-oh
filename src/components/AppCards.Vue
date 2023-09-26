@@ -19,6 +19,7 @@
 </template>
 
 <script>
+
 // IMPORTA STATE GLOBALE DA store.js PER NON DOVER PASSARE LE PROP DA COMPONENTE A COMPONENTE E CREARE UN PROP DRILLING
 import { store } from '../store';
 
@@ -32,16 +33,12 @@ export default {
 
         }
     },
-    // mounted() {
-
-    //     //USA LA FUNZIONE PER RICHIAMARE I DATI DALLA API CONTENTUTA DENTRO "store"
-    //     store.fetchData()
-
-    // }
 
 }
 </script>
 
 <style lang="scss" scoped>
-@use '../assets/scss/partials/AppCards.scss'
+@use '../assets/scss/partials/variables.scss' as *;
+
+@use '../assets/scss/partials/AppCards.scss';
 </style>

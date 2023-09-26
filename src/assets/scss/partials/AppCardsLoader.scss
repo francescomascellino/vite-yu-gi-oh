@@ -1,0 +1,34 @@
+@use './variables.scss' as *;
+
+@use './AppCards.scss';
+
+/*#region SHINE */
+
+.ygo-cardLoader {
+    min-height: 290px;
+
+    .ygo-imgLoader {
+        height: 180px;
+    }
+
+}
+
+.shine {
+    background: linear-gradient(110deg, #dab47f 8%, $ygo-orange 18%, #dab47f 33%);
+    background-size: 200% 100%;
+    animation: 1s shine linear infinite;
+}
+
+h6.shine,
+p.shine {
+    padding: 8px 16px;
+    line-height: 2rem;
+}
+
+@keyframes shine {
+    to {
+        background-position-x: -200%;
+    }
+}
+
+/*#endregion SHINE */
