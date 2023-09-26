@@ -2,18 +2,16 @@
     <!-- DROPDOWN BUTTON ROW -->
     <div class="row mb-4">
 
-        <div class="col">
+        <div class="col-2">
 
-            <!-- DROPDOWN BUTTON -->
-            <div class="dropdown">
-                <button class="btn dropdown-toggle shadow ygo-dropdown" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    STARTING TYPE FROM API
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">TYPES LIST</a></li>
-                </ul>
-            </div>
+            <select class="form-select shadow ygo-dropdown" aria-label="ygo-filter-type">
+
+                <!-- BISOGNA EFFETTUARE UNA CHIANATA CHE FILTRI SOLO GLI ARCHETIPI, MA DALLA DOC NON SI CAPISCE -->
+                <option value="1" selected>Alien</option>
+                <option value="2">ARCHETYPE FROM API</option>
+                <option value="3">ARCHETYPE FROM API</option>
+
+            </select>
 
         </div>
 
@@ -21,9 +19,27 @@
 </template>
 
 <script>
+// IMPORTA STATE GLOBALE DA store.js PER NON DOVER PASSARE LE PROP DA COMPONENTE A COMPONENTE E CREARE UN PROP DRILLING
+import { store } from '../store';
+
 export default {
-    name: "AppDropdown"
+    name: "AppDropdown",
+    data() {
+        return {
+
+            store
+
+        }
+    },
+
+    mounted() {
+        // RITORNA TROPPI ELEMENTI (507) CHE NON ACCETTANO VALORI ("The Card Archetypes Endpoint requires that no GET parameters be set.")
+        // store.fetchArchetypes()
+    }
 }
+
+
+
 </script>
 
 <style lang="scss" scoped>

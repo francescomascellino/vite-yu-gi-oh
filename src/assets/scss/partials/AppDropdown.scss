@@ -2,5 +2,10 @@
 
 .ygo-dropdown {
     background-color: $ygo-orange;
+    border-color: $ygo-dark;
     color: $ygo-primary;
+
+    option:hover {
+        background-color: $ygo-medium !important;
+    }
 }

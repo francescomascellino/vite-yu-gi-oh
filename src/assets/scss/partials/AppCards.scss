@@ -12,12 +12,14 @@
         font-size: smaller;
         text-align: center;
         text-transform: uppercase;
+        font-weight: bold;
         color: $ygo-primary;
     }
 
     .ygo-cardText {
         font-size: smaller;
         text-align: center;
+        font-weight: 400;
         color: $ygo-secondary;
     }
 
