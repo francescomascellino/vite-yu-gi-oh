@@ -1,0 +1,15 @@
+@use './variables.scss' as *;
+
+nav {
+    background-color: $ygo-orange;
+
+    .ygo-logo {
+        padding: 2rem;
+
+        img {
+            height: 4rem;
+        }
+
+    }
+
+}

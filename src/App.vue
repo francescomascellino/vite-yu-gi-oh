@@ -1,10 +1,8 @@
 <template>
     <header>
-        <nav class="shadow">
-            <div class="text-center ygo-logo">
-                <img src="./assets/img/ygo-logo.png" alt="logo">
-            </div>
-        </nav>
+
+        <AppNavbar />
+
     </header>
     <main class="my-4">
 
@@ -12,19 +10,19 @@
 
         <div class="container">
 
+            <!-- DROPDOWN BUTTON ROW -->
             <div class="row mb-4">
 
                 <div class="col">
 
+                    <!-- DROPDOWN BUTTON -->
                     <div class="dropdown">
                         <button class="btn dropdown-toggle shadow ygo-dropdown" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            Dropdown button
+                            STARTING TYPE FROM API
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">TYPES LIST</a></li>
                         </ul>
                     </div>
 
@@ -170,9 +168,15 @@
 
 // IMPORTA STATE GLOBALE DA store.js PER NON DOVER PASSARE LE PROP DA COMPONENTE A COMPONENTE E CREARE UN PROP DRILLING
 import { store } from './store';
+import AppNavbar from './components/AppNavbar.vue'
 
 export default {
     name: "App",
+
+    components: {
+        AppNavbar
+    },
+
     data() {
         return {
 
@@ -192,7 +196,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@use './assets/scss/App.scss';
 @use './assets/scss/partials/variables.scss' as *;
 
 nav {
