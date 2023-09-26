@@ -7,7 +7,30 @@
         </nav>
     </header>
     <main class="my-4">
+
+
+
         <div class="container">
+
+            <div class="row mb-4">
+
+                <div class="col">
+
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle shadow ygo-dropdown" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown button
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
 
             <!-- CARDS CONTAINER -->
             <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4" v-if="store.cards">
@@ -186,7 +209,10 @@ nav {
 
 }
 
-
+.ygo-dropdown {
+    background-color: $ygo-orange;
+    color: $ygo-primary;
+}
 
 .ygo-card {
 
