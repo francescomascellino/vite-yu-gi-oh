@@ -21,7 +21,7 @@
 
 import AppNavbar from './components/AppNavbar.vue';
 import AppDropdown from './components/AppDropdown.vue';
-import AppCardsContainer from './components/AppCardsContainer.vue'
+import AppCardsContainer from './components/AppCardsContainer.vue';
 
 export default {
     name: "App",
@@ -29,7 +29,7 @@ export default {
     components: {
         AppNavbar,
         AppDropdown,
-        AppCardsContainer
+        AppCardsContainer,
     }
 
 }

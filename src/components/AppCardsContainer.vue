@@ -2,30 +2,17 @@
     <!-- CARDS CONTAINER -->
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4" v-if="store.cards">
 
-        <!-- CARD -->
-        <div class="col" v-for="card in store.cards">
 
-            <div class="card shadow ygo-card">
-
-                <img class="card-img-top" :src="card.card_images[0].image_url" alt="Title">
-
-                <div class="card-body p-2">
-
-                    <h6 class="card-title ygo-cardTitle">{{ card.name }}</h6>
-                    <p class="card-text ygo-cardText">{{ card.type }}</p>
-
-                </div>
-
-            </div>
-
-        </div>
+        <AppCards />
 
     </div>
 
     <!-- LOADER -->
+
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4 justify-content-center" v-else>
 
         <!-- FAKE CARDS -->
+
         <div class="col">
 
             <div class="card shadow ygo-card ygo-cardLoader">
@@ -135,9 +122,14 @@
 
 // IMPORTA STATE GLOBALE DA store.js PER NON DOVER PASSARE LE PROP DA COMPONENTE A COMPONENTE E CREARE UN PROP DRILLING
 import { store } from '../store';
+import AppCards from './AppCards.Vue'
 
 export default {
     name: "AppCardsContainer",
+
+    components: {
+        AppCards
+    },
 
     data() {
         return {
@@ -158,29 +150,6 @@ export default {
 
 <style lang="scss" scoped>
 @use '../assets/scss/partials/variables.scss' as *;
-
-.ygo-card {
-
-    background-color: $ygo-orange;
-
-    .card-body {
-        height: 92px;
-    }
-
-    .ygo-cardTitle {
-        font-size: smaller;
-        text-align: center;
-        text-transform: uppercase;
-        color: $ygo-primary;
-    }
-
-    .ygo-cardText {
-        font-size: smaller;
-        text-align: center;
-        color: $ygo-secondary;
-    }
-
-}
 
 /*#region SHINE */
 

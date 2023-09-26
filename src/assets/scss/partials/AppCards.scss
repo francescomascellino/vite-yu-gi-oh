@@ -1,0 +1,24 @@
+@use './variables.scss' as *;
+
+.ygo-card {
+
+    background-color: $ygo-orange;
+
+    .card-body {
+        height: 92px;
+    }
+
+    .ygo-cardTitle {
+        font-size: smaller;
+        text-align: center;
+        text-transform: uppercase;
+        color: $ygo-primary;
+    }
+
+    .ygo-cardText {
+        font-size: smaller;
+        text-align: center;
+        color: $ygo-secondary;
+    }
+
+}
