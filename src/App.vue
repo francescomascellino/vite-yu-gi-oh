@@ -19,6 +19,7 @@
 
 <script>
 
+// IMPORTA COMPONENTI
 import AppNavbar from './components/AppNavbar.vue';
 import AppDropdown from './components/AppDropdown.vue';
 import AppCardsContainer from './components/AppCardsContainer.vue';

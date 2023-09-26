@@ -18,15 +18,19 @@
 
 // IMPORTA STATE GLOBALE DA store.js PER NON DOVER PASSARE LE PROP DA COMPONENTE A COMPONENTE E CREARE UN PROP DRILLING
 import { store } from '../store';
-import AppCards from './AppCards.Vue';
+
+//IMPORTA COMPONENTI
+import AppCards from './AppCards.vue';
 import AppCardsLoader from './AppCardsLoader.vue'
 
 export default {
     name: "AppCardsContainer",
 
     components: {
+
         AppCards,
         AppCardsLoader
+
     },
 
     data() {
@@ -36,6 +40,7 @@ export default {
 
         }
     },
+
     mounted() {
 
         //USA LA FUNZIONE PER RICHIAMARE I DATI DALLA API CONTENTUTA DENTRO "store"
@@ -46,9 +51,4 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
-@use '../assets/scss/partials/variables.scss' as *;
-
-
-@use '../assets/scss/partials/AppCards.scss';
-</style>
+<style lang="scss" scoped></style>
