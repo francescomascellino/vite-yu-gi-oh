@@ -2,16 +2,16 @@
     <header>
         <h1 class="text-center"> Yu-Gi_OH! Vite </h1>
     </header>
-    <main>
+    <main class="mt-4">
         <div class="container">
 
-            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6">
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4">
                 <div class="col" v-for="card in store.cards">
-                    <div class="card">
+                    <div class="card shadow ygo-card">
                         <img class="card-img-top" :src="card.card_images[0].image_url" alt="Title">
-                        <div class="card-body">
-                            <h4 class="card-title">{{ card.name }}</h4>
-                            <p class="card-text">{{ card.type }}</p>
+                        <div class="card-body p-2">
+                            <h6 class="card-title ygo-cardTitle">{{ card.name }}</h6>
+                            <p class="card-text ygo-cardText">{{ card.type }}</p>
                         </div>
                     </div>
                 </div>
@@ -48,4 +48,24 @@ export default {
 
 <style lang="scss" scoped>
 @use './assets/scss/App.scss';
+@use './assets/scss/partials/variables.scss' as *;
+
+.ygo-card {
+    height: 288px;
+    background-color: $ygo-orange;
+
+    .ygo-cardTitle {
+        font-size: smaller;
+        text-align: center;
+        text-transform: uppercase;
+        color: $ygo-primary;
+    }
+
+    .ygo-cardText {
+        font-size: smaller;
+        text-align: center;
+        color: $ygo-secondary;
+    }
+
+}
 </style>

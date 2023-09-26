@@ -1,1 +1,7 @@
-@use 'bootstrap'
+@use 'bootstrap';
+
+@use './partials/variables.scss' as *;
+
+body {
+    background-color: $ygo-dark;
+}
