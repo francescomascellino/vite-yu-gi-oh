@@ -13,11 +13,10 @@ export const store = reactive({
     fetchData() {
         axios.get(this.api_url)
             .then(response => {
-                // console.log(response);
                 this.cards = response.data.data;
-                console.log(this.cards);
+                console.log('CARDS x18', this.cards);
                 this.meta = response.data.meta;
-                console.log(response.data.meta);
+                console.log('META x18', response.data.meta);
 
             })
             .catch(error => {
