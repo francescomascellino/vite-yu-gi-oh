@@ -50,6 +50,7 @@ export default {
 
         filterArchetype() {
 
+            this.store.cardsOffset = 0;
             this.store.fetchData(this.store.api_url);
 
         },

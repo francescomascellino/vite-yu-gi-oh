@@ -1,7 +1,7 @@
 <template>
     <div class="col-2">
 
-        <!-- AL CHANGE DELLA OPTION EMETTE "filterArch" -->
+        <!-- AL CHANGE DELLA OPTION EMETTE "cardPerPageValue" -->
         <select class="form-select shadow ygo-dropdown" @change="$emit('cardPerPageValue')" v-model="store.maxCards">
 
             <option value="5" selected>5</option>

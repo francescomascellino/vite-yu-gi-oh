@@ -6,13 +6,14 @@ import axios from "axios";
 
 export const store = reactive({
 
-    maxCards: "15",
     // api_url: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0',
     api_url: 'https://db.ygoprodeck.com/api/v7/cardinfo.php',
     archetypes_url: 'https://db.ygoprodeck.com/api/v7/archetypes.php',
+    maxCards: 15,
+    cardsOffset: 0,
+    pagesRemaining: null,
 
     cards: null,
-    meta: null,
     selArch: null,
     cardCounter: null,
 
@@ -21,7 +22,7 @@ export const store = reactive({
 
             // POSSIAMO USARE PARAMETRI PER RENDERE LA CHIAMATA DINAMICA
             params: {
-                offset: 0,
+                offset: this.cardsOffset,
                 num: this.maxCards,
                 archetype: this.selArch
             }
@@ -30,9 +31,9 @@ export const store = reactive({
                 this.cards = response.data.data;
                 // console.log('CARDS', this.cards);
                 this.cardCounter = this.cards.length;
-                // this.meta = response.data.meta;
-                // console.log('META x15', response.data.meta);
-                console.log('MAX CARDS', this.maxCards, "ARCH", this.selArch);
+                // console.log('META', response.data.meta);
+                this.pagesRemaining = response.data.meta.pages_remaining
+                console.log('MAX CARDS', this.maxCards, "ARCH", this.selArch, " PAGES REMAINING:", this.pagesRemaining, "PAGES BACKWARD:", this.prevPage_url);
 
             })
             .catch(error => {
