@@ -7,7 +7,7 @@
             <!-- AL CHANGE DELLA OPTION EMETTE "filterArch" -->
             <select class="form-select shadow ygo-dropdown" @change="$emit('filterArch')" v-model="store.selArch">
 
-                <option selected>Filter Archetypes</option>
+                <option value="" disabled hidden>Select Archetype</option>
                 <option :value="archetype.archetype_name" v-for="archetype in store.archetypes">
                     {{ archetype.archetype_name }}
                 </option>
