@@ -1,19 +1,23 @@
 <template>
     <!-- DROPDOWN BUTTON ROW -->
-    <div class="row mb-4">
+    <div class="row justify-content-between mb-4">
 
-        <div class="col-3">
+        <div class="col-4">
 
             <!-- AL CHANGE DELLA OPTION EMETTE "filterArch" -->
             <select class="form-select shadow ygo-dropdown" @change="$emit('filterArch')" v-model="store.selArch">
 
-                <option selected disabled>Filter Archetypes</option>
+                <option selected>Filter Archetypes</option>
                 <option :value="archetype.archetype_name" v-for="archetype in store.archetypes">
                     {{ archetype.archetype_name }}
                 </option>
 
             </select>
 
+        </div>
+
+        <div class="col text-end me-1 ygo-counter">
+            <h3>Cards found: {{ store.cardCounter }}</h3>
         </div>
 
     </div>

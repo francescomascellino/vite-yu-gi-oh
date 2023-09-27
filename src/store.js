@@ -11,12 +11,15 @@ export const store = reactive({
     cards: null,
     meta: null,
     selArch: "",
+    cardCounter: "",
 
     fetchData(url) {
         axios.get(url)
             .then(response => {
                 this.cards = response.data.data;
                 console.log('CARDS x18', this.cards);
+                this.cardCounter = this.cards.length;
+                console.log(this.cardCounter);
                 this.meta = response.data.meta;
                 console.log('META x18', response.data.meta);
 

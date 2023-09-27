@@ -31,14 +31,6 @@ export default {
         card: "Object"
     },
 
-    data() {
-        return {
-
-            // store
-
-        }
-    },
-
 }
 </script>
 
