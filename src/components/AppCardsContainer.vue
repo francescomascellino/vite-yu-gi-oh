@@ -21,14 +21,7 @@
 import { store } from '../store';
 
 //IMPORTA COMPONENTI
-
-/* 
-Already included file name 'd:/Documenti/Coding/Boolean Class 104/JS/vite-yu-gi-oh/src/components/AppCards.vue.js' differs from file name 'd:/documenti/coding/boolean class 104/js/vite-yu-gi-oh/src/components/appcards.vue.js' only in casing.
-The file is in the program because:ts(1261)
-module "d:/Documenti/Coding/Boolean Class 104/JS/vite-yu-gi-oh/src/components/AppCards.vue"
- */
 import AppCard from './AppCard.vue';
-
 import AppCardsLoader from './AppCardsLoader.vue'
 
 export default {
