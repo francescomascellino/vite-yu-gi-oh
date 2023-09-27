@@ -2,7 +2,7 @@
     <div class="col-2">
 
         <!-- AL CHANGE DELLA OPTION EMETTE "filterArch" -->
-        <select class="form-select shadow ygo-dropdown" @change="$emit('setMaxCards')" v-model="store.maxCards">
+        <select class="form-select shadow ygo-dropdown" @change="$emit('cardPerPageValue')" v-model="store.maxCards">
 
             <option value="5" selected>5</option>
             <option value="10" selected>10</option>
@@ -23,6 +23,8 @@ import { store } from '../store';
 
 export default {
     name: "AppMaxCardsSelect",
+
+    emits: ['cardPerPageValue'],
 
     data() {
         return {

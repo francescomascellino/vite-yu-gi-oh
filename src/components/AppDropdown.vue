@@ -16,7 +16,8 @@
 
         </div>
 
-        <AppMaxCardsSelect @setMaxCards="setMaxCards" />
+        <!-- IL METODO "cardPerPageValue" EMESSO VIENE ASSOCIATO A "setMaxCards" -->
+        <AppMaxCardsSelect @cardPerPageValue="setMaxCards" />
 
         <div class="col text-end me-1 ygo-counter">
             <h3>Cards found: {{ store.cardCounter }}</h3>
@@ -35,7 +36,7 @@ export default {
     name: "AppDropdown",
 
     // VIENE DICHIARATO L'emit IN MODO POSSA ESSERE RAGGIUNTO DAL PADRE (App.vue)
-    emits: ['filterArch', 'setMaxCards'],
+    emits: ['filterArch'],
 
     components: {
         AppMaxCardsSelect
@@ -52,8 +53,6 @@ export default {
 
     methods: {
         setMaxCards() {
-            console.log('MAX CARDS', this.store.maxCards, "ARCH", this.store.selArch);
-
             this.store.fetchData(this.store.api_url);
 
         }

@@ -18,6 +18,8 @@ export const store = reactive({
 
     fetchData(url) {
         axios.get(url, {
+
+            // POSSIAMO USARE PARAMETRI PER RENDERE LA CHIAMATA DINAMICA
             params: {
                 offset: 0,
                 num: this.maxCards,
@@ -31,6 +33,7 @@ export const store = reactive({
                 // console.log(this.cardCounter);
                 // this.meta = response.data.meta;
                 // console.log('META x15', response.data.meta);
+                console.log('MAX CARDS', this.maxCards, "ARCH", this.selArch);
 
             })
             .catch(error => {
@@ -38,12 +41,12 @@ export const store = reactive({
             })
     },
 
+    // RECUPERA L'INTERA LISTA DEGLI ARCHETIPI
     fetchArchetypes() {
 
         axios.get(this.archetypes_url)
             .then(response => {
                 this.archetypes = response.data;
-                // console.log('ARCHETYPES', this.archetypes);
             })
             .catch(error => {
                 console.error(error);
