@@ -5,7 +5,7 @@ import { reactive } from "vue";
 import axios from "axios";
 
 export const store = reactive({
-    api_url: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=18&offset=0',
+    api_url: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0',
     archetypes_url: ' https://db.ygoprodeck.com/api/v7/archetypes.php',
 
     cards: null,
@@ -17,11 +17,11 @@ export const store = reactive({
         axios.get(url)
             .then(response => {
                 this.cards = response.data.data;
-                console.log('CARDS x18', this.cards);
+                console.log('CARDS x15', this.cards);
                 this.cardCounter = this.cards.length;
                 console.log(this.cardCounter);
                 this.meta = response.data.meta;
-                console.log('META x18', response.data.meta);
+                console.log('META x15', response.data.meta);
 
             })
             .catch(error => {

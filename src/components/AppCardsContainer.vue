@@ -1,6 +1,6 @@
 <template>
     <!-- CARDS CONTAINER -->
-    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4" v-if="store.cards">
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4" v-if="store.cards">
 
         <!-- LA PROP card IN APPCARD VIENE BINDATA a "card" IN "store.cards" -->
         <AppCard :card="card" v-for="card in store.cards" />
@@ -8,7 +8,7 @@
     </div>
 
     <!-- LOADER -->
-    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4 justify-content-center" v-else>
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center" v-else>
 
         <AppCardsLoader />
 

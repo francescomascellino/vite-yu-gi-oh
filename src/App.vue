@@ -50,10 +50,7 @@ export default {
 
         filterArchetype() {
 
-            // console.log("FILTERING:", event.target.value, "selArch", store.selArch);
-
-            // // ATTUALMENTE FILTRA SOLO A.I.
-            const searcArch_url = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${store.selArch}&num=18&offset=0`;
+            const searcArch_url = this.store.api_url + `&archetype=${this.store.selArch}`;
 
             console.log(searcArch_url);
 
