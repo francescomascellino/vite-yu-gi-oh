@@ -12,6 +12,7 @@ export const store = reactive({
     maxCards: 15,
     cardsOffset: 0,
     pagesRemaining: null,
+    pagesBack: 0,
 
     cards: null,
     selArch: null,
@@ -29,11 +30,21 @@ export const store = reactive({
         })
             .then(response => {
                 this.cards = response.data.data;
+
                 // console.log('CARDS', this.cards);
-                this.cardCounter = this.cards.length;
+
                 // console.log('META', response.data.meta);
-                this.pagesRemaining = response.data.meta.pages_remaining
-                console.log('MAX CARDS', this.maxCards, "ARCH", this.selArch, " PAGES REMAINING:", this.pagesRemaining, "PAGES BACKWARD:", this.prevPage_url);
+
+                // RECUPERO DA META IL TOTALE DELLE CARTE FILTRATE
+                this.cardCounter = response.data.meta.total_rows;
+
+                // RECUPERO PAGINE RESTANTI DA "response.data.meta.pages_remaining"
+                this.pagesRemaining = response.data.meta.pages_remaining;
+
+                // CALCOLO PAGINE SUPERATE
+                this.pagesBack = (this.cardsOffset / this.maxCards);
+                // LOG RIASSUNTIVO
+                console.log('MAX CARDS', this.maxCards, "ARCH", this.selArch, " PAGES REMAINING:", this.pagesRemaining, "PAGES BACKWARD:", this.pagesBack);
 
             })
             .catch(error => {

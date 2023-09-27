@@ -1,0 +1,10 @@
+@use './variables.scss' as *;
+
+.ygo-btn {
+    color: $ygo-primary;
+    background-color: $ygo-orange;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}

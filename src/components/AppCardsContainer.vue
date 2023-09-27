@@ -14,14 +14,8 @@
 
     </div>
 
-    <div class="row mt-4">
-
-        <div class="col-12 d-flex justify-content-around">
-            <button class="btn btn-primary" @click="prevPage()">PREV</button>
-            <button class="btn btn-primary" @click="nextPage()">NEXT</button>
-        </div>
-
-    </div>
+    <!-- NAVIGATION BTNS -->
+    <AppNavBtns />
 </template>
 
 <script>
@@ -31,7 +25,8 @@ import { store } from '../store';
 
 //IMPORTA COMPONENTI
 import AppCard from './AppCard.vue';
-import AppCardsLoader from './AppCardsLoader.vue'
+import AppCardsLoader from './AppCardsLoader.vue';
+import AppNavBtns from './AppNavBtns.vue'
 
 export default {
     name: "AppCardsContainer",
@@ -39,7 +34,8 @@ export default {
     components: {
 
         AppCard,
-        AppCardsLoader
+        AppCardsLoader,
+        AppNavBtns
 
     },
 
@@ -49,32 +45,6 @@ export default {
             store
 
         }
-    },
-
-    methods: {
-
-        nextPage() {
-
-            if (this.store.pagesRemaining > 0) {
-                this.store.cardsOffset += Number(this.store.maxCards);
-                console.log(this.store.cardsOffset);
-                this.store.fetchData(this.store.api_url);
-
-            }
-
-        },
-
-        prevPage() {
-
-            if (this.store.cardsOffset > 0) {
-                this.store.cardsOffset -= Number(this.store.maxCards);
-                console.log(this.store.cardsOffset);
-                this.store.fetchData(this.store.api_url);
-
-            }
-
-        },
-
     },
 
     mounted() {
