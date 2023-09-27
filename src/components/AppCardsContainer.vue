@@ -3,7 +3,7 @@
     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4" v-if="store.cards">
 
         <!-- LA PROP card IN APPCARD VIENE BINDATA a "card" IN "store.cards" -->
-        <AppCards :card="card" v-for="card in store.cards" />
+        <AppCard :card="card" v-for="card in store.cards" />
 
     </div>
 
@@ -27,7 +27,7 @@ Already included file name 'd:/Documenti/Coding/Boolean Class 104/JS/vite-yu-gi-
 The file is in the program because:ts(1261)
 module "d:/Documenti/Coding/Boolean Class 104/JS/vite-yu-gi-oh/src/components/AppCards.vue"
  */
-import AppCards from './AppCards.vue';
+import AppCard from './AppCard.vue';
 
 import AppCardsLoader from './AppCardsLoader.vue'
 
@@ -36,7 +36,7 @@ export default {
 
     components: {
 
-        AppCards,
+        AppCard,
         AppCardsLoader
 
     },
@@ -52,7 +52,10 @@ export default {
     mounted() {
 
         //USA LA FUNZIONE PER RICHIAMARE I DATI DALLA API CONTENTUTA DENTRO "store"
-        store.fetchData()
+        setTimeout(() => {
+            store.fetchData()
+        }, 1000)
+
 
     }
 }

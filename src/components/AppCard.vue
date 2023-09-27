@@ -23,7 +23,7 @@
 // import { store } from '../store';
 
 export default {
-    name: "AppCards",
+    name: "AppCard",
 
     props: {
 
@@ -45,5 +45,5 @@ export default {
 <style lang="scss" scoped>
 @use '../assets/scss/partials/variables.scss' as *;
 
-@use '../assets/scss/partials/AppCards.scss';
+@use '../assets/scss/partials/AppCard.scss';
 </style>

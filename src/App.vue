@@ -9,6 +9,8 @@
 
         <div class="container">
 
+            <AppSearchBar />
+
             <AppDropdown />
 
             <AppCardsContainer />
