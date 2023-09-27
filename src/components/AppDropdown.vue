@@ -4,12 +4,11 @@
 
         <div class="col-2">
 
-            <select class="form-select shadow ygo-dropdown" aria-label="ygo-filter-type">
+            <select class="form-select shadow ygo-dropdown">
 
                 <!-- BISOGNA EFFETTUARE UNA CHIANATA CHE FILTRI SOLO GLI ARCHETIPI, MA DALLA DOC NON SI CAPISCE -->
-                <option value="1" selected>Alien</option>
-                <option value="2">ARCHETYPE FROM API</option>
-                <option value="3">ARCHETYPE FROM API</option>
+                <option value="1" v-for="archetype in store.archetypes">{{ archetype.archetype_name
+                }}</option>
 
             </select>
 
@@ -34,7 +33,7 @@ export default {
 
     mounted() {
         // RITORNA TROPPI ELEMENTI (507) CHE NON ACCETTANO VALORI ("The Card Archetypes Endpoint requires that no GET parameters be set.")
-        // store.fetchArchetypes()
+        store.fetchArchetypes()
     }
 }
 

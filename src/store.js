@@ -30,7 +30,7 @@ export const store = reactive({
         axios.get(this.archetypes_url)
             .then(response => {
                 this.archetypes = response.data;
-                console.log('arch', this.archetypes);
+                console.log('ARCHETYPES', this.archetypes);
             })
             .catch(error => {
                 console.error(error);
