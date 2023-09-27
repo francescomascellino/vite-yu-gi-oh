@@ -4,10 +4,11 @@
 
         <div class="col-2">
 
-            <select class="form-select shadow ygo-dropdown">
+            <!-- AL CHANGE DELLA OPTION EMETTE "filterArch" -->
+            <select class="form-select shadow ygo-dropdown" @change="$emit('filterArch')">
 
                 <!-- BISOGNA EFFETTUARE UNA CHIANATA CHE FILTRI SOLO GLI ARCHETIPI, MA DALLA DOC NON SI CAPISCE -->
-                <option value="1" v-for="archetype in store.archetypes">{{ archetype.archetype_name
+                <option :value="archetype.archetype_name" v-for="archetype in store.archetypes">{{ archetype.archetype_name
                 }}</option>
 
             </select>
@@ -23,12 +24,17 @@ import { store } from '../store';
 
 export default {
     name: "AppDropdown",
+
+    // VIENE DICHIARATO L'emit IN MODO POSSA ESSERE RAGGIUNTO DAL PADRE (App.vue)
+    emits: ['filterArch'],
+
     data() {
         return {
 
             store
 
         }
+
     },
 
     mounted() {

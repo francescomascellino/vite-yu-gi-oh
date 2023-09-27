@@ -7,6 +7,7 @@ import axios from "axios";
 export const store = reactive({
     api_url: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=18&offset=0',
     archetypes_url: ' https://db.ygoprodeck.com/api/v7/archetypes.php',
+
     cards: null,
     meta: null,
 

@@ -8,10 +8,8 @@
     <main class="my-4">
 
         <div class="container">
-
-            <AppSearchBar />
-
-            <AppDropdown />
+            <!-- SI DICHIARA CHE IL METODO EMESSO "filterArch" VIENE LEGATO A "filterArchetype" -->
+            <AppDropdown @filterArch="filterArchetype" />
 
             <AppCardsContainer />
 
@@ -33,7 +31,18 @@ export default {
         AppNavbar,
         AppDropdown,
         AppCardsContainer,
-    }
+    },
+
+    methods: {
+
+        filterArchetype() {
+
+            console.log("FILTERING...");
+
+            // const searcArch_url = this.api_url + `?archetype= + ${test}`
+        }
+
+    },
 
 }
 </script>
