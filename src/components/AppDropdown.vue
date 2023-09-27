@@ -16,6 +16,8 @@
 
         </div>
 
+        <AppMaxCardsSelect @setMaxCards="setMaxCards" />
+
         <div class="col text-end me-1 ygo-counter">
             <h3>Cards found: {{ store.cardCounter }}</h3>
         </div>
@@ -27,11 +29,17 @@
 // IMPORTA STATE GLOBALE DA store.js PER NON DOVER PASSARE LE PROP DA COMPONENTE A COMPONENTE E CREARE UN PROP DRILLING
 import { store } from '../store';
 
+import AppMaxCardsSelect from './AppMaxCardsSelect.vue';
+
 export default {
     name: "AppDropdown",
 
     // VIENE DICHIARATO L'emit IN MODO POSSA ESSERE RAGGIUNTO DAL PADRE (App.vue)
-    emits: ['filterArch'],
+    emits: ['filterArch', 'setMaxCards'],
+
+    components: {
+        AppMaxCardsSelect
+    },
 
     data() {
         return {
@@ -40,6 +48,15 @@ export default {
 
         }
 
+    },
+
+    methods: {
+        setMaxCards() {
+            console.log('MAX CARDS', this.store.maxCards, "ARCH", this.store.selArch);
+
+            this.store.fetchData(this.store.api_url);
+
+        }
     },
 
     mounted() {

@@ -50,13 +50,9 @@ export default {
 
         filterArchetype() {
 
-            const searcArch_url = this.store.api_url + `&archetype=${this.store.selArch}`;
+            this.store.fetchData(this.store.api_url);
 
-            console.log(searcArch_url);
-
-            this.store.fetchData(searcArch_url);
-
-        }
+        },
 
     },
 
