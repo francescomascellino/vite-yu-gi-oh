@@ -28,9 +28,8 @@ export const store = reactive({
         })
             .then(response => {
                 this.cards = response.data.data;
-                // console.log('CARDS x15', this.cards);
+                // console.log('CARDS', this.cards);
                 this.cardCounter = this.cards.length;
-                // console.log(this.cardCounter);
                 // this.meta = response.data.meta;
                 // console.log('META x15', response.data.meta);
                 console.log('MAX CARDS', this.maxCards, "ARCH", this.selArch);
