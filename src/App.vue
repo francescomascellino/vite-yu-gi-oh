@@ -28,8 +28,6 @@ import AppCardsContainer from './components/AppCardsContainer.vue';
 
 import { store } from './store';
 
-import axios from "axios";
-
 export default {
     name: "App",
 
@@ -54,6 +52,7 @@ export default {
 
             // console.log("FILTERING:", event.target.value, "selArch", store.selArch);
 
+            // // ATTUALMENTE FILTRA SOLO A.I.
             const searcArch_url = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${store.selArch}&num=18&offset=0`;
 
             console.log(searcArch_url);

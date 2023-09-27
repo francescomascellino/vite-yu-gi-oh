@@ -10,7 +10,7 @@ export const store = reactive({
 
     cards: null,
     meta: null,
-    selArch: "A.I.",
+    selArch: "",
 
     fetchData(url) {
         axios.get(url)
