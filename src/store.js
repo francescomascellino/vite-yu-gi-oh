@@ -10,9 +10,10 @@ export const store = reactive({
 
     cards: null,
     meta: null,
+    selArch: "A.I.",
 
-    fetchData() {
-        axios.get(this.api_url)
+    fetchData(url) {
+        axios.get(url)
             .then(response => {
                 this.cards = response.data.data;
                 console.log('CARDS x18', this.cards);
@@ -27,7 +28,6 @@ export const store = reactive({
 
     fetchArchetypes() {
 
-        // RITORNA TROPPI ELEMENTI (507) CHE NON ACCETTANO VALORI ("The Card Archetypes Endpoint requires that no GET parameters be set.")
         axios.get(this.archetypes_url)
             .then(response => {
                 this.archetypes = response.data;

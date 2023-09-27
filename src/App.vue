@@ -24,8 +24,23 @@ import AppNavbar from './components/AppNavbar.vue';
 import AppDropdown from './components/AppDropdown.vue';
 import AppCardsContainer from './components/AppCardsContainer.vue';
 
+/* Already included file name 'd:/Documenti/Coding/Boolean Class 104/JS/vite-yu-gi-oh/src/components/AppCardsContainer.vue.js' differs from file name 'd:/documenti/coding/boolean class 104/js/vite-yu-gi-oh/src/components/appcardscontainer.vue.js' only in casing. */
+
+import { store } from './store';
+
+import axios from "axios";
+
 export default {
     name: "App",
+
+    data() {
+        return {
+
+            store
+
+        }
+
+    },
 
     components: {
         AppNavbar,
@@ -37,9 +52,14 @@ export default {
 
         filterArchetype() {
 
-            console.log("FILTERING...");
+            // console.log("FILTERING:", event.target.value, "selArch", store.selArch);
 
-            // const searcArch_url = this.api_url + `?archetype= + ${test}`
+            const searcArch_url = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${store.selArch}&num=18&offset=0`;
+
+            console.log(searcArch_url);
+
+            this.store.fetchData(searcArch_url);
+
         }
 
     },

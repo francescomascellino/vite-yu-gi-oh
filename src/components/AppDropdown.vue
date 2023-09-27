@@ -2,14 +2,15 @@
     <!-- DROPDOWN BUTTON ROW -->
     <div class="row mb-4">
 
-        <div class="col-2">
+        <div class="col-3">
 
             <!-- AL CHANGE DELLA OPTION EMETTE "filterArch" -->
             <select class="form-select shadow ygo-dropdown" @change="$emit('filterArch')">
 
-                <!-- BISOGNA EFFETTUARE UNA CHIANATA CHE FILTRI SOLO GLI ARCHETIPI, MA DALLA DOC NON SI CAPISCE -->
-                <option :value="archetype.archetype_name" v-for="archetype in store.archetypes">{{ archetype.archetype_name
-                }}</option>
+                <option selected>Filter Archetypes</option>
+                <option :value="archetype.archetype_name" v-for="archetype in store.archetypes">
+                    {{ archetype.archetype_name }}
+                </option>
 
             </select>
 
@@ -38,7 +39,6 @@ export default {
     },
 
     mounted() {
-        // RITORNA TROPPI ELEMENTI (507) CHE NON ACCETTANO VALORI ("The Card Archetypes Endpoint requires that no GET parameters be set.")
         store.fetchArchetypes()
     }
 }

@@ -53,7 +53,7 @@ export default {
 
         //USA LA FUNZIONE PER RICHIAMARE I DATI DALLA API CONTENTUTA DENTRO "store"
         setTimeout(() => {
-            store.fetchData()
+            store.fetchData(this.store.api_url)
         }, 1000)
 
 
