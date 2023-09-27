@@ -1,6 +1,6 @@
 <template>
     <!-- CARD -->
-    <div class="col" v-for="card in store.cards">
+    <div class="col">
 
         <div class="card shadow ygo-card">
 
@@ -19,16 +19,22 @@
 </template>
 
 <script>
-// IMPORTA STATE GLOBALE DA store.js PER NON DOVER PASSARE LE PROP DA COMPONENTE A COMPONENTE E CREARE UN PROP DRILLING
-import { store } from '../store';
+// IMPORTA STATE GLOBALE DA "store.js" PER NON DOVER PASSARE LE PROP DA COMPONENTE A COMPONENTE E CREARE UN PROP DRILLING
+// import { store } from '../store';
 
 export default {
     name: "AppCards",
 
+    props: {
+
+        // VIENE DICHIARATO CHE "card" E' UN OGGETTO IN MODO CHE POSSA LEGGERE "card" in "store.cards" DENTRO "AppCardsContainer"
+        card: "Object"
+    },
+
     data() {
         return {
 
-            store
+            // store
 
         }
     },
