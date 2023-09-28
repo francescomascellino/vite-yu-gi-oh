@@ -43,6 +43,9 @@ export default {
             // SE offset E' TORNATO 0 SIAMO ALLA PRIMA PAGINA
             if (this.store.cardsOffset > 0) {
                 this.store.cardsOffset -= Number(this.store.maxCards);
+                if (this.store.cardsOffset < 0) {
+                    this.store.cardsOffset = 0;
+                }
                 console.log(this.store.cardsOffset);
                 this.store.fetchData(this.store.api_url);
 

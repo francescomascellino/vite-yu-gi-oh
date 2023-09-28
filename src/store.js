@@ -42,9 +42,9 @@ export const store = reactive({
                 this.pagesRemaining = response.data.meta.pages_remaining;
 
                 // CALCOLO PAGINE SUPERATE
-                this.pagesBack = (this.cardsOffset / this.maxCards);
+                this.pagesBack = Math.round((this.cardsOffset / this.maxCards));
                 // LOG RIASSUNTIVO
-                console.log('MAX CARDS', this.maxCards, "ARCH", this.selArch, " PAGES REMAINING:", this.pagesRemaining, "PAGES BACKWARD:", this.pagesBack);
+                console.log('MAX CARDS', this.maxCards, "OFFSET", this.cardsOffset, "ARCH", this.selArch, " PAGES REMAINING:", this.pagesRemaining, "PAGES BACKWARD:", this.pagesBack);
 
             })
             .catch(error => {
